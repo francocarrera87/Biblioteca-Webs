@@ -2,17 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@400;600;700&display=swap');
 
 :root {
-    --background-color: #f5f7fa;
+    --background-color: #8298b9d1;
     --text-color: #2c3e50;
-    --box-background: rgba(255, 255, 255, 0.9);
+    --box-background: rgba(237, 236, 236, 0.881);
     --title-color: #34495e;
     --subtitle-color: #7f8c8d;
     --button-bg: #3498db;
     --button-hover: #2980b9;
     --button-active: #2c3e50;
     --content-bg: #f8f9fa;
-    --link-color: #e74c3c;
-    --link-hover: #c0392b;
+    --link-color: #614d4b;
+    --link-hover: #005eeb;
     --footer-bg: #2c3e50;
     --footer-text: #ecf0f1;
 }
@@ -37,8 +37,8 @@ body.dark-mode {
     --button-hover: #3498db;
     --button-active: #1abc9c;
     --content-bg: #34495e;
-    --link-color: #e74c3c;
-    --link-hover: #c0392b;
+    --link-color: #f7f4d2;
+    --link-hover: #7ee845;
     --footer-bg: #1a2533;
     --footer-text: #ecf0f1;
 }
