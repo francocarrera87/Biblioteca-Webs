@@ -1,131 +1,317 @@
 /* Estilos generales para la página */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&family=Raleway:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@400;600;700&display=swap');
+
+:root {
+    --background-color: #f5f7fa;
+    --text-color: #2c3e50;
+    --box-background: rgba(255, 255, 255, 0.9);
+    --title-color: #34495e;
+    --subtitle-color: #7f8c8d;
+    --button-bg: #3498db;
+    --button-hover: #2980b9;
+    --button-active: #2c3e50;
+    --content-bg: #f8f9fa;
+    --link-color: #e74c3c;
+    --link-hover: #c0392b;
+    --footer-bg: #2c3e50;
+    --footer-text: #ecf0f1;
+}
 
 body {
-    font-family: 'Nunito', sans-serif; /* Tipografía amigable */
-    background: url('../img/back2.webp') no-repeat center center fixed; /* Imagen de fondo */
-    background-size: cover; /* Cubrir todo el fondo */
-    color: #333; /* Texto gris oscuro */
-    margin: 8%;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--background-color) 0%, #c3cfe2 100%);
+    color: var(--text-color);
+    margin: 5% 10%;
     padding: 0;
-    transition: background-color 0.3s; /* Transición para el color de fondo */
+    transition: background-color 0.3s, color 0.3s;
+    line-height: 1.6;
+}
+
+body.dark-mode {
+    --background-color: #2c3e50;
+    --text-color: #ecf0f1;
+    --box-background: rgba(52, 73, 94, 0.9);
+    --title-color: #ecf0f1;
+    --subtitle-color: #bdc3c7;
+    --button-bg: #2980b9;
+    --button-hover: #3498db;
+    --button-active: #1abc9c;
+    --content-bg: #34495e;
+    --link-color: #e74c3c;
+    --link-hover: #c0392b;
+    --footer-bg: #1a2533;
+    --footer-text: #ecf0f1;
 }
 
 .box {
-    background-color: #ffffff; /* Fondo blanco */
-    border: 1px solid #ddd; /* Borde gris claro */
-    border-radius: 15px; /* Bordes redondeados */
-    padding: 20px;
-    width: 80%;
-    margin: 20px auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle un efecto de profundidad */
-    transition: transform 0.3s ease-in-out; /* Transición para la animación */
-    font-family: 'Raleway', sans-serif; /* Tipografía moderna */
-}
-
-.box:hover {
-    transform: scale(1.05); /* Escalado al pasar el mouse */
+    background-color: var(--box-background);
+    border: none;
+    border-radius: 20px;
+    padding: 30px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilos para la sección de título */
 .title {
     text-align: center;
-    padding: 20px;
-    font-family: 'Raleway', sans-serif; /* Tipografía moderna */
+    padding: 30px 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .title h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    color: #222; /* Color del título */
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: var(--title-color);
+    font-weight: 700;
 }
 
 .title p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #555; /* Color del párrafo */
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: var(--subtitle-color);
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 /* Estilo para los botones collapsible */
 .collapsible {
-    background-color: #3498db; /* Fondo azul */
-    color: #fff; /* Texto blanco */
+    background-color: var(--button-bg);
+    color: #fff;
     cursor: pointer;
-    padding: 18px;
+    padding: 20px 25px;
     width: 100%;
     border: none;
     text-align: left;
     outline: none;
-    font-size: 15px;
-    border-radius: 10px; /* Bordes redondeados */
-    transition: background-color 0.3s, transform 0.3s ease-in-out; /* Transición para el color de fondo y la animación */
-    padding-left: 5%;
-    margin-bottom: 4px;
-    font-family: 'Raleway', sans-serif; /* Tipografía moderna */
+    font-size: 1.1rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .collapsible:hover {
-    background-color: #2980b9; /* Color más oscuro al pasar el mouse */
-    transform: translateX(10px); /* Animación de desplazamiento */
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
 }
 
-/* Estilo activo */
 .collapsible.active {
-    background-color: #2980b9; /* Color activo más oscuro */
+    background-color: var(--button-active);
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    margin: 0;
 }
 
 /* Estilo para el contenido */
 .content {
-    overflow: hidden;
-    background-color: #ecf0f1; /* Fondo gris claro */
+    background-color: var(--content-bg);
     max-height: 0;
     opacity: 0;
-    transition: max-height 0.3s ease-out, opacity 0.5s ease-out; /* Animaciones */
-    border-radius: 0 0 10px 10px;
-    padding-left: 6%;
-    font-family: 'Nunito', sans-serif; /* Tipografía amigable */
+    transition: all 0.5s ease-out;
+    border-radius: 0 0 12px 12px;
+    padding: 0 25px;
+    overflow: hidden;
 }
 
-/* Mostrar el contenido cuando el botón está activo */
 .collapsible.active + .content {
-    max-height: 1000px; /* Altura máxima para el contenido desplegado */
+    max-height: 1000px;
     opacity: 1;
-    margin-bottom: 3%;
-    padding-bottom: 3%;
+    padding: 20px 25px;
+    margin-bottom: 15px;
 }
 
 .content a {
     display: block;
-    color: #e74c3c; /* Texto rojo */
-    padding: 8px 0;
+    color: var(--link-color);
+    padding: 12px 0;
     text-decoration: none;
-    transition: background-color 0.3s, transform 0.3s ease-in-out; /* Transición para el color de fondo y la animación */
-    font-family: 'Raleway', sans-serif; /* Tipografía moderna */
-    border-radius: 10px; /* Bordes redondeados */
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    border-radius: 8px;
 }
 
 .content a:hover {
-    background-color: #d1d1d1; /* Color más claro al pasar el mouse */
-    transform: translateX(10px); /* Animación de desplazamiento */
-    text-decoration: none; /* Sin subrayado */
-}
- 
-/* Estilo para el footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #3498db; /* Fondo azul */
-    color: #fff; /* Texto blanco */
-    border-radius: 15px; /* Bordes redondeados */
-    margin-top: 40px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle un efecto de profundidad */
-    font-family: 'Raleway', sans-serif; /* Tipografía moderna */
+    background-color: var(--content-bg);
+    transform: translateX(10px);
+    padding-left: 10px;
+    color: var(--link-hover);
 }
 
-footer p {
-    margin: 0;
-    font-size: 1rem;
+/* Estilos para el footer alternativo */
+.footer-alt {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 40px 20px 20px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 300px;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #3498db;
+}
+
+.donation-options {
+    display: flex;
+    gap: 15px;
+}
+
+.donation-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.donation-link i {
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+.donation-link.local {
+    background-color: #e74c3c;
+}
+
+.donation-link.local:hover {
+    background-color: #c0392b;
+}
+
+.donation-link.paypal {
+    background-color: #003087;
+}
+
+.donation-link.paypal:hover {
+    background-color: #001f6b;
+}
+
+.footer-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #34495e;
+    font-size: 0.85rem;
+    color: #bdc3c7;
+}
+
+/* Estilos para el botón de cambio de tema */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--button-bg);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle:hover {
+    background-color: var(--button-hover);
+    transform: scale(1.1);
+}
+
+.theme-toggle i {
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.theme-toggle .fa-sun {
+    display: none;
+}
+
+body.dark-mode .theme-toggle .fa-sun {
+    display: inline-block;
+}
+
+body.dark-mode .theme-toggle .fa-moon {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    body {
+        margin: 5%;
+    }
+
+    .box {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .title h1 {
+        font-size: 2.5rem;
+    }
+
+    .title p {
+        font-size: 1.1rem;
+    }
+
+    .collapsible {
+        font-size: 1rem;
+        padding: 15px 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-section {
+        width: 100%;
+    }
+
+    .donation-options {
+        flex-direction: column;
+    }
+
+    .donation-link {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .theme-toggle {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
 }
